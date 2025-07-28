@@ -1,0 +1,295 @@
+:root {
+    /* Neutral */
+
+    --Neutral-900: hsl(227, 75%, 14%);
+    --Neutral-800: hsl(226, 25%, 17%);
+    --Neutral-700: hsl(225, 23%, 24%);
+    --Neutral-600: hsl(226, 11%, 37%);
+    --Neutral-300: hsl(0, 0%, 78%);
+    --Neutral-200: hsl(217, 61%, 90%);
+    --Neutral-100: hsl(0, 0%, 93%);
+    --Neutral-0: hsl(200, 60%, 99%);
+
+    /* Red */
+
+    --Red-400: hsl(3, 86%, 64%);
+    --Red-500: hsl(3, 71%, 56%);
+    --Red-700: hsl(3, 77%, 44%);
+
+    /* Gradient */
+
+    --Light-Gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --Dark-Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+
+body {
+    background: var(--Dark-Gradient);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.lightBody {
+    background: var(--Neutral-200);
+}
+
+/* Header */
+
+header {
+    border-radius: 1.5rem;
+    padding: 1rem;
+}
+
+header.lightMode{
+    background: var(--Light-Gradient);
+}
+
+.toggleMode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .6rem;
+    border-radius: .8rem;
+    cursor: pointer;
+    
+}
+
+.toggleMode svg {
+    width: 75%;
+}
+
+.darkMode,
+.removeBtn.darkMode {
+    background-color: var(--Neutral-700);
+    color: var(--Neutral-100);
+}
+
+.toggleMode.lightMode{
+    background-color: var(--Neutral-300);
+}
+
+.removeBtn.lightMode {
+    background-color: var(--Neutral-0);
+    box-shadow: 0px 0px 2px var(--Neutral-600);
+}
+
+.lightMode p,
+.lightMode h1{
+    color: black;
+}
+
+.toggleMode.darkMode:hover,
+.chooseStates.darkMode:hover {
+    background-color: var(--Neutral-600);
+}
+
+.chooseStates.lightMode,
+.extensionCard.lightMode.isSelected{
+    border: none;
+    box-shadow: 0px 0px 2px black;
+}
+
+
+.toggleMode.lightMode:hover,
+.toggleMode.lightMode:active {
+    background-color: var(--Neutral-600);
+}
+
+
+
+/* STATE SECTION */
+
+.stateSection {
+    margin: 5rem 0 3rem 0;
+}
+
+.stateSection h1 {
+    font-size: 2.5rem;
+    color: var(--Neutral-0);
+}
+
+.btnStateDiv {
+    display: flex;
+    gap: 2rem;
+}
+
+.chooseStates {
+    padding: .7rem 1.4rem;
+    border-radius: 1.5rem;
+    color: var(--Neutral-200);
+    border: 1px solid var(--Neutral-700);
+    letter-spacing: .1rem;
+    cursor: pointer;
+}
+
+/* ADD DARK MODE AND LIGHT MODE */
+.isSelected {
+    background-color: var(--Red-400);
+    color: var(--Neutral-900);
+    border: 1px solid var(--Neutral-900);
+}
+.isSelected.lightMode {
+    color: white!important;
+}
+
+.chooseStates:focus,
+.removeBtn:focus,
+.toggleMode:focus {
+    border: 1px solid var(--Red-400);
+    box-shadow: inset 0px 0px 0px 2px var(--Neutral-900);
+    background-color: var(--Neutral-600);
+}
+
+.chooseStates.isSelected:focus{
+    background-color: var(--Red-400);
+}
+
+.chooseStates.isSelected.lightMode:focus{
+    border: 2px solid var(--Red-400);
+    box-shadow: inset 0px 0px 0px 2px var(--Neutral-0);
+
+}
+
+
+
+/* MAIN SECTION */
+
+.extLists {
+    gap: 6rem;
+    justify-content: center;
+}
+
+.extensionCard {
+    /* background-color: var(--Neutral-800); */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 40rem;
+    border-radius: 1.4rem;
+    gap: 4rem;
+}
+
+.extensionCard.lightMode{
+    background: var(--Light-Gradient);
+}
+
+.extensionCard > div {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.textDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.textDiv h1 {
+    color: var(--Neutral-100);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.textDiv p {
+    color: var(--Neutral-300);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.removeBtnDiv {
+    justify-content: space-between;
+}
+
+.removeBtn {
+    padding: .7rem 1.4rem;
+    background-color: var(--Neutral-800);
+    border: 1px solid var(--Neutral-600);
+    border-radius: 1.5rem;
+    color: var(--Neutral-300);
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: .1rem;
+}
+
+.removeBtn:hover{
+    background-color: var(--Red-400);
+    color: var(--Neutral-900);
+}
+
+.removeBtn.lightMode:hover {
+    color: white!important;
+}
+
+.toggleDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* MAKE TOGGLE SWITCH */
+
+input[type="checkbox"].toggle {
+    /* make checkbox invisible */
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    left: -9000px;
+    top: -9000px;
+}
+
+input[type="checkbox"].toggle + label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+input[type="checkbox"].toggle + label::before {
+    content: "";
+    width: 5rem;
+    height: 2.3rem;
+    background-color: var(--Neutral-600);
+    border-radius: 2rem;
+    transition: all .1s linear;
+    cursor: pointer;
+}
+
+input[type="checkbox"].toggle.lightMode + label::before {
+    background-color: var(--Neutral-300);
+}
+
+
+input[type="checkbox"].toggle + label::after {
+    position: absolute;
+    left: .2rem;
+    top: .3rem;
+    content: "";
+    width: 1.7rem;
+    height: 1.7rem;
+    background-color: var(--Neutral-100);
+    border-radius: 50%;
+    transition: all .1s linear;
+    cursor: pointer;
+}
+
+input[type="checkbox"].toggle:checked + label::before {
+    background-color: var(--Red-700);
+}
+input[type="checkbox"].toggle:checked + label::after {
+    transform: translateX(168%);
+}
+
+
+/* DISPLAY NONE */
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    margin-top: 5rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
+
+.none {
+    display: none;
+}
