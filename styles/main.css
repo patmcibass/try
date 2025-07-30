@@ -1,3 +1,5 @@
+@import url('./layout.css');
+
 :root {
     /* Neutral */
 
@@ -29,7 +31,7 @@ body {
     background-size: cover;
     min-height: 100vh;
     position: relative;
-    padding: 0 0 .5rem 0;
+
 }
 
 .lightBody {
@@ -67,8 +69,25 @@ header.lightMode{
     color: var(--Neutral-100);
 }
 
+.toggleMode.darkMode {
+    background-color: var(--Neutral-600);
+}
+
+.toggleMode.darkMode:hover{
+    background-color: var(--Neutral-800);
+}
+
 .toggleMode.lightMode{
+    background-color: var(--Neutral-100);
+}
+
+.toggleMode.lightMode:hover {
     background-color: var(--Neutral-300);
+}
+
+.toggleMode.lightMode:focus {
+    background-color: var(--Neutral-100);
+    box-shadow: 0px 0px 0px 1px var(--Red-400);
 }
 
 .removeBtn.lightMode {
@@ -81,7 +100,6 @@ header.lightMode{
     color: black;
 }
 
-.toggleMode.darkMode:hover,
 .chooseStates.darkMode:hover {
     background-color: var(--Neutral-600);
 }
@@ -92,8 +110,6 @@ header.lightMode{
     box-shadow: 0px 0px 2px black;
 }
 
-
-.toggleMode.lightMode:hover,
 .toggleMode.lightMode:active {
     background-color: var(--Neutral-600);
 }
@@ -143,14 +159,24 @@ header.lightMode{
     background-color: var(--Neutral-600);
 }
 
-.chooseStates.isSelected:focus{
+.chooseStates.darkMode.isSelected:focus{
     background-color: var(--Red-400);
 }
 
-.chooseStates.isSelected.lightMode:focus{
+.chooseStates.darkMode.isSelected:focus{
     border: 2px solid var(--Red-400);
     box-shadow: inset 0px 0px 0px 2px var(--Neutral-0);
 
+}
+
+.chooseStates.lightMode:focus  {
+    background-color: var(--Neutral-100);
+    box-shadow: 0px 0px 0px 1px var(--Red-400);
+}
+
+.chooseStates.lightMode.isSelected:focus  {
+    background-color: var(--Red-700);
+    box-shadow:inset 0px 0px 0px 2px var(--Neutral-0), 0px 0px 0px 1px var(--Red-700);
 }
 
 
@@ -164,7 +190,6 @@ header.lightMode{
 }
 
 .extensionCard {
-    /* background-color: var(--Neutral-800); */
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -222,6 +247,11 @@ header.lightMode{
 
 .removeBtn.lightMode:hover {
     color: white!important;
+}
+
+.removeBtn.lightMode:focus {
+    background-color: var(--Neutral-100);
+    box-shadow:  0px 0px 1px var(--Red-400);
 }
 
 .toggleDiv {
