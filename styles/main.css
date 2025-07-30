@@ -28,6 +28,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+    position: relative;
+    padding: 0 0 .5rem 0;
 }
 
 .lightBody {
@@ -158,6 +160,7 @@ header.lightMode{
 .extLists {
     gap: 6rem;
     justify-content: center;
+    margin: 0 0 10rem 0;
 }
 
 .extensionCard {
@@ -285,9 +288,17 @@ input[type="checkbox"].toggle:checked + label::after {
     font-size: 11px;
     text-align: center;
     margin-top: 5rem;
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    color: var(--Neutral-300);
 }
 .attribution a { 
-    color: hsl(228, 45%, 44%);
+    color: var(--Neutral-200);
+}
+
+.attribution a:hover {
+    color: var(--Red-400)
 }
 
 .none {
